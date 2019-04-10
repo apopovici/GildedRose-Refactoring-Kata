@@ -4,15 +4,8 @@
     {
         public override void Update()
         {
-            if (SellIn > 0)
-            {
-                Quality--;
-            }
-            else
-            {
-                // Once the sell by date has passed, Quality degrades twice as fast
-                Quality -= 2;
-            }
+            // Once the sell by date has passed, Quality degrades twice as fast
+            Quality -= SellIn > 0 ? 1 : 2;
             
             DailyUpdate();
         }
