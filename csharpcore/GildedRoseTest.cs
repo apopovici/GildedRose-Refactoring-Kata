@@ -1,5 +1,6 @@
-﻿using Xunit;
+﻿using csharpcore.Items;
 using System.Collections.Generic;
+using Xunit;
 
 namespace csharpcore
 {
@@ -8,10 +9,10 @@ namespace csharpcore
         [Fact]
         public void foo()
         {
-            IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
+            IList<Item> Items = new List<Item> { new StandardItem { Name = "foo", SellIn = 0, Quality = 0 } };
             GildedRose app = new GildedRose(Items);
             app.UpdateQuality();
-            Assert.Equal("fixme", Items[0].Name);
+            Assert.Equal("foo", Items[0].Name);
         }
     }
 }
